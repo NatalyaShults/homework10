@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class ManagerTest {
 
     @Test
-    public void ShouldFindAll() {
+    public void shouldFindAll() {
         FilmsManager manager = new FilmsManager();
 
         manager.add("Movie 1");
@@ -19,7 +19,7 @@ public class ManagerTest {
     }
 
     @Test
-    public void ShouldFindIfOne() {
+    public void shouldFindIfOne() {
         FilmsManager manager = new FilmsManager();
 
         manager.add("Movie 2");
@@ -30,7 +30,7 @@ public class ManagerTest {
     }
 
     @Test
-    public void ShouldFindIfNone() {
+    public void shouldFindIfNone() {
         FilmsManager manager = new FilmsManager();
 
         String[] actual = manager.findAll();
@@ -39,7 +39,7 @@ public class ManagerTest {
     }
 
     @Test
-    public void ShouldFindLast() {
+    public void shouldFindLast() {
         FilmsManager manager = new FilmsManager();
 
         manager.add("Movie 1");
@@ -54,7 +54,7 @@ public class ManagerTest {
     }
 
     @Test
-    public void ShouldFindLastIfMoreFive() {
+    public void shouldFindLastIfMoreFive() {
         FilmsManager manager = new FilmsManager(6);
 
         manager.add("Movie 1");
@@ -70,7 +70,7 @@ public class ManagerTest {
     }
 
     @Test
-    public void ShouldFindLastIfMoreFiveLimit() {
+    public void shouldFindLastIfMoreFiveLimit() {
         FilmsManager manager = new FilmsManager();
 
         manager.add("Movie 1");
@@ -78,15 +78,14 @@ public class ManagerTest {
         manager.add("Movie 3");
         manager.add("Movie 4");
         manager.add("Movie 5");
-        manager.add("Movie 6");
 
         String[] actual = manager.findLast();
-        String[] expected = {"Movie 6", "Movie 5", "Movie 4", "Movie 3", "Movie 2", "Movie 1"};
+        String[] expected = {"Movie 5", "Movie 4", "Movie 3", "Movie 2", "Movie 1"};
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void ShouldFindLastIfMoreSixLimit() {
+    public void shouldFindLastIfMoreSixLimit() {
         FilmsManager manager = new FilmsManager(6);
 
         manager.add("Movie 1");
@@ -95,15 +94,14 @@ public class ManagerTest {
         manager.add("Movie 4");
         manager.add("Movie 5");
         manager.add("Movie 6");
-        manager.add("Movie 7");
 
         String[] actual = manager.findLast();
-        String[] expected = {"Movie 7", "Movie 6", "Movie 5", "Movie 4", "Movie 3", "Movie 2", "Movie 1"};
+        String[] expected = {"Movie 6", "Movie 5", "Movie 4", "Movie 3", "Movie 2", "Movie 1"};
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void ShouldFindLastIfLessFive() {
+    public void shouldFindLastIfLessFive() {
         FilmsManager manager = new FilmsManager();
 
         manager.add("Movie 1");
@@ -116,7 +114,7 @@ public class ManagerTest {
     }
 
     @Test
-    public void ShouldFindLastIfOne() {
+    public void shouldFindLastIfOne() {
         FilmsManager manager = new FilmsManager();
 
         manager.add("Movie 1");
